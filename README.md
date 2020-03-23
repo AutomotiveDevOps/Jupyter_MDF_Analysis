@@ -4,8 +4,7 @@ Working away from your Vector and MATLAB licenses? MDF4 file analysis with Jupyt
 
 - [MDF4 CAN Bus Data Logger (Intro + J1939/OBD2 Samples)](https://www.csselectronics.com/screen/page/mdf4-measurement-data-format/language/en)
 
-
-## Introductions to Jupyter Notebooks.
+## Introductions to Jupyter Notebooks:
 
 ### Tutorials/Examples
 
@@ -15,8 +14,8 @@ Working away from your Vector and MATLAB licenses? MDF4 file analysis with Jupyt
   
 #### Keyboard Shortcuts
 
-https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330
-https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/
+- https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330
+- https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/
 
 
 ### Articles
