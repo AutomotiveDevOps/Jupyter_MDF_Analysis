@@ -34,3 +34,19 @@ Working away from your Vector and MATLAB licenses? MDF4 file analysis with Jupyt
 
 - [Up and Running: Jupyter Notebook](https://youtu.be/oJ6z02N0Te0) [11:02]
 - [PayPal Notebooks: Data science and machine learning at scale, powered by Jupyter](https://youtu.be/KVGrACWVUgE)
+
+# Usage
+
+## Linux/msys
+
+    git clone http://github.com/SimulinkDevOps/Jupyter_MDF_Analysis.git
+    # 
+    git submodule update --init 
+    # Create Virtual Environment
+    make venv
+    # 
+    make nb 
+
+## Windows 
+
+TODO

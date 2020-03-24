@@ -14,7 +14,7 @@ matplotlib
 -e asammdf/ # <- Continental
 h5py # <- The HDF Group
 scipy # <- SciPy Group.
-python-control # <- CalTech (Dr. Richard M. Murray & Dr. Scott C. Livingston)
+control # <- CalTech (Dr. Richard M. Murray & Dr. Scott C. Livingston)
 
 ## Company/Independent Projects.
 # Code snippets from developers.
