@@ -1,0 +1,18 @@
+# MATLAB Engineers:
+# The 'requirements file' is a list of Python Dependencies.
+# The Python development stack is not vertically integrated at a company
+# like Mathworks, but developed by engineers at multiple
+# organisations:
+
+# Jupyter Notebook development
+jupyter
+notebook # <- Anaconda, Netflix, IBM, NASA, ....
+# Plotting Tools.
+seaborn
+matplotlib
+
+https://github.com/danielhrisca/asammdf/archive/development.zip # <- Continental
+h5py # <- The HDF Group
+scipy # <- SciPy Group.
+control # <- CalTech (Dr. Richard M. Murray & Dr. Scott C. Livingston)
+fsspec # <- Anaconda.
