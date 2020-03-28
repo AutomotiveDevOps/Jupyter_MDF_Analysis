@@ -9,4 +9,3 @@ chmod +x minio
 mkdir -p data
 
 nohup ./minio server  data/ &
-service redis-server start
