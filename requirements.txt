@@ -11,13 +11,8 @@ notebook # <- Anaconda, Netflix, IBM, NASA, ....
 seaborn
 matplotlib
 
--e asammdf/ # <- Continental
+https://github.com/danielhrisca/asammdf/archive/development.zip # <- Continental
 h5py # <- The HDF Group
 scipy # <- SciPy Group.
 control # <- CalTech (Dr. Richard M. Murray & Dr. Scott C. Livingston)
-
-## Company/Independent Projects.
-# Code snippets from developers.
-# The "matlab file exchange" of Python.
--e mdfgen/ # <- Install from the mdfgen folder.
-git+https://github.com/dapperfu/get_files.git
+fsspec # <- Anaconda.
