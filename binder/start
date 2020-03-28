@@ -1,7 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export MINIO_ACCESS_KEY=minio
 export MINIO_SECRET_KEY=miniostorage
 
 mkdir -p mdf_data
 screen -dmS minio bash -c './minio serve --address 127.0.0.1:9000 mdf_data'
+
+exec "$@"
