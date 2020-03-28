@@ -1,3 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env bash
 
-print("Hello World!")
+export MINIO_ACCESS_KEY=minio
+export MINIO_SECRET_KEY=miniostorage
+export MINIO_OPTS="--address 127.0.0.1:9199"
+
+wget https://dl.min.io/server/minio/release/linux-amd64/minio
+chmod +x minio
+mkdir -p data
+
+nohup ./minio server  data/ &
+service redis-server start
