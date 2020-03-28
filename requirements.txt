@@ -15,4 +15,5 @@ https://github.com/danielhrisca/asammdf/archive/development.zip # <- Continental
 h5py # <- The HDF Group
 scipy # <- SciPy Group.
 control # <- CalTech (Dr. Richard M. Murray & Dr. Scott C. Livingston)
-fsspec # <- Anaconda.
+fsspec
+s3fs
