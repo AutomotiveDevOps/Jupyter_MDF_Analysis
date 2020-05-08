@@ -4,3 +4,5 @@ quickstart_example*
 *.mdf
 *.mf4
 *.png
+
+.local/
