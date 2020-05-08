@@ -37,7 +37,7 @@ print(Signal.__doc__)
             display name used by mdf version 3
         attachment : bytes, name
             channel attachment and name from MDF version 4
-        source : SignalSource
+        source : Source
             source information named tuple
         bit_count : int
             bit count; useful for integer channels
@@ -140,7 +140,7 @@ s_map.plot()
 ```
 
     WARNING:root:Signal plotting requires pyqtgraph or matplotlib
-    /projects/Jupyter_MDF_Analysis/venv3.8/lib/python3.8/site-packages/asammdf/signal.py:262: MatplotlibDeprecationWarning: Adding an axes using the same arguments as a previous axes currently reuses the earlier instance.  In a future version, a new instance will always be created and returned.  Meanwhile, this warning can be suppressed, and the future behavior ensured, by passing a unique label to each axes instance.
+    /opt/conda/lib/python3.7/site-packages/asammdf/signal.py:266: MatplotlibDeprecationWarning: Adding an axes using the same arguments as a previous axes currently reuses the earlier instance.  In a future version, a new instance will always be created and returned.  Meanwhile, this warning can be suppressed, and the future behavior ensured, by passing a unique label to each axes instance.
       ax = fig.add_subplot(111, projection="3d")
 
 

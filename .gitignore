@@ -1,0 +1,6 @@
+sample_files*
+quickstart_example*
+
+*.mdf
+*.mf4
+*.png

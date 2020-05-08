@@ -127,7 +127,7 @@ with MDF(version="4.10") as mdf4:
     	invalidation_bits=None
     	unit=""
     	conversion=None
-    	source=SignalSource(name='Created by Python', path='Created by Python', comment='Module number=0 @ address=0', source_type=0, bus_type=0)
+    	source=None
     	comment=""
     	mastermeta="('time', 1)"
     	raw=False

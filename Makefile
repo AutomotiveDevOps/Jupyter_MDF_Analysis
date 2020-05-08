@@ -31,45 +31,56 @@ requirements: requirements.txt
 	@${BIN}/pip install --upgrade --requirement requirements.txt
 
 ## Action Targets
-# Notebook in a screen, listen on all interfaces.
-.PHONY: notebook-all
-notebook-all:
+# Notebook in a screen.
+.PHONY:nba
+nba:
 	screen -S ${PROJ} -d -m ${BIN}/jupyter-notebook --ip=
 
-# Notebook screen, listen only on localhost.
-.PHONY: notebook
-notebook:
+# Notebook locally in a screen.
+.PHONY: nb
+nb:
 	screen -S ${PROJ} -d -m ${BIN}/jupyter-notebook
+
+# Launch a worker.
+.PHONY:worker
+worker:
+	${PYTHON} worker.py
 
 ## Make Documentation
 # Generate the README from the Jupyter Notebook.
 README.md: README.ipynb
-	${BIN}/jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to markdown --output=${@} ${<}
+	jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to markdown --output=${@} ${<}
 
 .PHONY: clean.docs
 clean.docs:
-	rm -rf docs scripts
+	rm -rf docs
+
+.PHONY: docs.docker
+docs.docker:
+	./docker_docs.sh
+
 # Convert Notebooks to other formats.
 IPYNB:=$(wildcard *.ipynb)
-PY:=$(patsubst %.ipynb,scripts/%.py,${IPYNB})
 MD:=$(patsubst %.ipynb,docs/markdown/%.md,${IPYNB})
 PDF:=$(patsubst %.ipynb,docs/pdf/%.pdf,${IPYNB})
 HTML:=$(patsubst %.ipynb,docs/html/%.html,${IPYNB})
 .PHONY: docs
-docs: ${MD} ${PDF} ${HTML} ${PY}
+docs: ${MD} ${PDF} ${HTML}
 
-scripts/%.py: %.ipynb
-	mkdir -p `dirname ${@}`
-	${BIN}/jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to python --output=${@} ${<}
+#
+docs/pdf/:
+	mkdir -p ${@}
+docs/html/:
+	mkdir -p ${@}
+docs/markdown/:
+	mkdir -p ${@}
 
-docs/markdown/%.md: %.ipynb
-	mkdir -p `dirname ${@}`
-	${BIN}/jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to markdown --output=${@} ${<}
+#
+docs/markdown/%.md: %.ipynb docs/markdown/
+	jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to markdown --output=${@} ${<}
 
-docs/pdf/%.pdf: %.ipynb
-	mkdir -p `dirname ${@}`
-	${BIN}/jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to pdf --output=${@} ${<}
+docs/pdf/%.pdf: %.ipynb docs/pdf/
+	jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to pdf --output=${@} ${<}
 
-docs/html/%.html: %.ipynb
-	mkdir -p `dirname ${@}`
-	${BIN}/jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to html --output=${@} ${<}
+docs/html/%.html: %.ipynb docs/html/
+	jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to html --output=${@} ${<}
