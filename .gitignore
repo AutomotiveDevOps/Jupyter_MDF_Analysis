@@ -6,3 +6,5 @@ quickstart_example*
 *.png
 
 .local/
+
+*.backup

@@ -1,8 +1,45 @@
-# Jupyter Notebooks MDF4 Analysis.
+# Notebooks MDF (Measurement Data Format) Analysis.
 
-Working away from your Vector and MATLAB licenses? MDF4 file analysis with Jupyter Notebooks, Python 3.8 & asammdf.
+Cloud based MDF4 file analysis with Jupyter Notebooks, Python 3.8 & asammdf.
 
 - [MDF4 CAN Bus Data Logger (Intro + J1939/OBD2 Samples)](https://www.csselectronics.com/screen/page/mdf4-measurement-data-format/language/en)
+
+- Target Audience: Engineers familiar with MDF analysis, unfamiliar with the Python analysis stack.
+- Python experience is suggested but not required.
+
+## Usage:
+
+### Online.
+
+Cloud based examples that run on any modern browser:
+
+| Notebook                             | Binder Link                                                                                                                                                                           |
+|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Quickstart                           | [![01_QuickStart](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AutomotiveDevops/Jupyter_MDF_Analysis/master?filepath=01_QuickStart.ipynb)                         |
+| Working With ```asammdf.MDF```       | [![02_Working_With_MDF_Class](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AutomotiveDevops/Jupyter_MDF_Analysis/master?filepath=02_Working_With_MDF_Class.ipynb) |
+| Working With the ``asammdf.Signal``` | [![03_Working_with_Signal](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AutomotiveDevops/Jupyter_MDF_Analysis/master?filepath=03_Working_with_Signal.ipynb)       |
+| ```asammdf``` issue #157             | [![10_asammdf_issue_157](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/AutomotiveDevops/Jupyter_MDF_Analysis/master?filepath=10_asammdf_issue_157.ipynb)           |
+
+### Locally:
+
+Virtual Environments:
+
+Creates virtual environment and launches ```jupyter-notebook```:
+
+```
+git clone --depth=1 https://github.com/AutomotiveDevOps/Jupyter_MDF_Analysis.git
+cd Jupyter_MDF_Analysis
+make venv
+make nb
+```
+
+[```repo2docker```](https://github.com/jupyter/repo2docker/blob/master/README.md): 
+
+```
+repo2docker https://github.com/AutomotiveDevOps/Jupyter_MDF_Analysis.git
+```
+
+[Windows support available upon request](https://github.com/AutomotiveDevops/Jupyter_MDF_Analysis/issues).
 
 ## Introductions to Jupyter Notebooks:
 
@@ -16,7 +53,6 @@ Working away from your Vector and MATLAB licenses? MDF4 file analysis with Jupyt
 
 - https://towardsdatascience.com/jypyter-notebook-shortcuts-bf0101a98330
 - https://cheatography.com/weidadeyue/cheat-sheets/jupyter-notebook/
-
 
 ### Articles
 
@@ -35,18 +71,5 @@ Working away from your Vector and MATLAB licenses? MDF4 file analysis with Jupyt
 - [Up and Running: Jupyter Notebook](https://youtu.be/oJ6z02N0Te0) [11:02]
 - [PayPal Notebooks: Data science and machine learning at scale, powered by Jupyter](https://youtu.be/KVGrACWVUgE)
 
-# Usage
 
-## Linux/msys
 
-    git clone http://github.com/SimulinkDevOps/Jupyter_MDF_Analysis.git
-    # 
-    git submodule update --init 
-    # Create Virtual Environment
-    make venv
-    # 
-    make nb 
-
-## Windows 
-
-TODO
