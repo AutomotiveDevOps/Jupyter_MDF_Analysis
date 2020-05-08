@@ -2,7 +2,6 @@
 # Python VER
 VER=3.8
 
-
 # Paths
 PROJ_DIR:=$(realpath $(dir $(firstword ${MAKEFILE_LIST})))
 PROJ?=$(notdir ${PROJ_DIR})
@@ -54,28 +53,29 @@ README.md: README.ipynb
 
 .PHONY: clean.docs
 clean.docs:
-	rm -rf docs scripts
+	rm -rf docs
 # Convert Notebooks to other formats.
 IPYNB:=$(wildcard *.ipynb)
-PY:=$(patsubst %.ipynb,scripts/%.py,${IPYNB})
 MD:=$(patsubst %.ipynb,docs/markdown/%.md,${IPYNB})
 PDF:=$(patsubst %.ipynb,docs/pdf/%.pdf,${IPYNB})
 HTML:=$(patsubst %.ipynb,docs/html/%.html,${IPYNB})
 .PHONY: docs
-docs: ${MD} ${PDF} ${HTML} ${PY}
+docs: ${MD} ${PDF} ${HTML}
 
-scripts/%.py: %.ipynb
-	mkdir -p `dirname ${@}`
-	-${BIN}/jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to python --output=${@} ${<}
+#
+docs/pdf/:
+	mkdir -p ${@}
+docs/html/:
+	mkdir -p ${@}
+docs/markdown/:
+	mkdir -p ${@}
 
-docs/markdown/%.md: %.ipynb
-	mkdir -p `dirname ${@}`
+#
+docs/markdown/%.md: %.ipynb docs/markdown/
 	jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to markdown --output=${@} ${<}
 
-docs/pdf/%.pdf: %.ipynb
-	mkdir -p `dirname ${@}`
-	-jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to pdf --output=${@} ${<}
+docs/pdf/%.pdf: %.ipynb docs/pdf/
+	jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to pdf --output=${@} ${<}
 
-docs/html/%.html: %.ipynb
-	mkdir -p `dirname ${@}`
+docs/html/%.html: %.ipynb docs/html/
 	jupyter-nbconvert --ExecutePreprocessor.timeout=600 --execute --to html --output=${@} ${<}

@@ -7,7 +7,7 @@
 # Jupyter Notebook development
 jupyter
 notebook # <- Anaconda, Netflix, IBM, NASA, ....
-notebook
+jupyter_client
 # Plotting Tools.
 seaborn
 matplotlib
