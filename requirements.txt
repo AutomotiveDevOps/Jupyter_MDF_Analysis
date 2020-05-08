@@ -7,12 +7,18 @@
 # Jupyter Notebook development
 jupyter
 notebook # <- Anaconda, Netflix, IBM, NASA, ....
+notebook
 # Plotting Tools.
 seaborn
 matplotlib
 
+# ASAM MDF Python Module.
 https://github.com/danielhrisca/asammdf/archive/development.zip # <- Continental
+# Other scientific libraries
 h5py # <- The HDF Group
 scipy # <- SciPy Group.
 control # <- CalTech (Dr. Richard M. Murray & Dr. Scott C. Livingston)
 fsspec # <- Anaconda.
+
+# Magic
+dask
